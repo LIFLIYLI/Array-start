@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>forEach</title>
+</head>
+<body>
+    <h2>数组的重要属性</h2>
+    <h3>forEach的用法</h3>
+    <span>
+        forEach是数组的遍历</br>
+        var arr = [1,2,3]</br>
+        arr.forEach(function(x,y){</br>
+            console.log(x)</br>
+            //函数中的参数x表示arr中的value</br>
+            console.log(y)</br>
+            //y表示arr中的key</br>
+        })</br>
+        上诉函数简写为：</br>
+        arr.forEach((x,y)=>{</br>
+            console.log(x)</br>
+            //函数中的参数x表示arr中的value</br>
+            console.log(y)</br>
+            //y表示arr中的key</br>
+        })</br>
+    </span>
+    <h3>map的用法</h3>
+    <span>
+        map的用法和forEach差不多，但是forEach没有返回值，map有返回值</br>
+        map有2个重要的属性</br>
+        1：Map.prototype.constructor</br>    
+        //返回一个函数，这个不了解</br>
+        2:Map.prototype.size</br>
+        //返回Map对象的键/值对的数量</br>
+        他还有一些方法，如：</br>
+        1：Map.prototype.set(key, value)</br>
+        //设置Map对象中键的值。返回该Map对象。</br>
+        例：</br>
+        var myMap = new Map();</br>
+        myMap.set(0, "zero");</br>
+        myMap.set(1, "one");</br>
+        上述代码则会设置并返回一个Map对象//Map(2) {0 => "zero", 1 => "one"}</br>
+        2：Map.prototype.delete(key)</br>
+        如果 Map 对象中存在该元素，则移除它并返回 true；否则如果该元素不存在则返回 false</br>
+        例：</br>
+        myMap.delete(0)</br>
+        删除了第0项，返回新的对象//Map(1) {1 => "one"}</br>
+        3：Map.prototype.get(key)</br>
+        返回键对应的值，如果不存在，则返回undefined。</br>
+        例：</br>
+        myMap.get(0)</br>
+        返回一个undefined,如果是myMap.get(1),则会返回字符串"one"</br>
+    </span>
+    <h3>filter的用法</h3>
+    <span>
+        filter相当于滤网，根据条件进行筛选</br>
+        例：</br>
+        arr=[1,2,3,4]</br>
+        arr.filter(function(value,key){</br>
+            return value>=2</br>
+        })</br>
+        得到的结果为[2,3,4],其中函数中的第一个参数为数组的value,第二个为key</br>
+    </span>
+    <h3>reduce的用法</h3>
+    <span>
+        reduce是相当于累计器</br>
+        例：</br>
+        arr.reduce(function(x,y){</br>
+            return x+y</br>
+        },0)</br>
+        得到的结果为10，（1+2+3+4）</br>
+        步骤是数组两两顺序相加，第一次是1+2，为3</br>
+        其中参数x相当于每次前一个两两相加之和，即为3</br>
+        y相当于两两相加之后的那个数，即为3</br>
+        第二次是3+3等于6，这一次x就为6，y就为4</br>
+        最后6+4，结果为10</br>
+    </span>
+</body>
+</html>
